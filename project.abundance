@@ -11,11 +11,11 @@
         },
         {
             "name": "TTF",
-            "ioValue": "http://fonts.gstatic.com/s/inder/v5/C38TwecLTfKxIHDc_Adcrw.ttf"
+            "ioValue": "\"http://fonts.gstatic.com/s/inder/v5/C38TwecLTfKxIHDc_Adcrw.ttf\""
         },
         {
             "name": "text size",
-            "ioValue": 10
+            "ioValue": 3
         }
     ],
     "description": "Molecules provide an organizational structure to contain atoms. Double click on a molecule to enter it. Use the up arrow in the upper right hand corner of the screen to go up one level.",
@@ -87,13 +87,13 @@
         {
             "atomType": "Code",
             "name": "Code",
-            "x": 0.5228915662650603,
-            "y": 0.40978593272171254,
+            "x": 0.5012048192771085,
+            "y": 0.5198776758409785,
             "uniqueID": 1741201495242,
             "ioValues": [
                 {
                     "name": "TTF",
-                    "ioValue": 10
+                    "ioValue": "\"http://fonts.gstatic.com/s/inder/v5/C38TwecLTfKxIHDc_Adcrw.ttf\""
                 },
                 {
                     "name": "text",
@@ -101,12 +101,12 @@
                 },
                 {
                     "name": "size",
-                    "ioValue": 10
+                    "ioValue": 3
                 }
             ],
             "description": "Defines a Replicad code block.",
             "codeVersion": 1,
-            "code": "//Inputs:[TTF, text, size]; \n\n await replicad.loadFont(\"https://fonts.gstatic.com/s/roboto/v15/W5F8_SL0XFawnjxHGsZjJA.ttf\")\n  \n      console.log(\"font loaded in code\")\n      textString = text.toString()\n\n      let shape2 = replicad.drawText(textString, {fontSize: size, font: \"ROBOTO\"})\n\n      const newPlane = new Plane().pivot(0, 'Y');\n      console.log(shape2)\n\n     return { geometry: [shape2.sketchOnPlane(newPlane).extrude(7)], tags: [],\n        color: '#A3CE5B',\n        plane: newPlane}\n\n"
+            "code": "//Inputs:[TTF, text, size]; \n\n await replicad.loadFont(TTF)\n  \n      console.log(\"font loaded in code\")\n      let textString = text.toString()\n\n      let shape2 = replicad.drawText(textString, {fontSize: size, font: \"ROBOTO\"})\n\n      const newPlane = new Plane().pivot(0, 'Y');\n      console.log(shape2)\n\n     return { geometry: [shape2.sketchOnPlane(newPlane).extrude(7)], tags: [],\n        color: '#A3CE5B',\n        plane: newPlane}\n\n"
         }
     ],
     "allConnectors": [
@@ -115,6 +115,20 @@
             "ap2Name": "text",
             "ap2Primary": false,
             "ap1ID": 1741196832630,
+            "ap2ID": 1741201495242
+        },
+        {
+            "ap1Name": "number or geometry",
+            "ap2Name": "TTF",
+            "ap2Primary": false,
+            "ap1ID": 1741196844315,
+            "ap2ID": 1741201495242
+        },
+        {
+            "ap1Name": "number or geometry",
+            "ap2Name": "size",
+            "ap2Primary": false,
+            "ap1ID": 1741196864005,
             "ap2ID": 1741201495242
         }
     ],
