@@ -7,7 +7,7 @@
     "ioValues": [
         {
             "name": "text",
-            "ioValue": "\"mommy\""
+            "ioValue": "\"ummmm\""
         },
         {
             "name": "TTF",
@@ -34,7 +34,7 @@
             "atomType": "Input",
             "name": "text",
             "x": 0.04,
-            "y": 0.8593272171253823,
+            "y": 0.8226299694189603,
             "uniqueID": 1741196832630,
             "ioValues": [],
             "description": "Adds an input to the parent molecule. If the parent molecule is the top level of the project then the input will be available when the project is shared or imported into another project. Name is editable",
@@ -44,7 +44,7 @@
             "atomType": "Input",
             "name": "TTF",
             "x": 0.04,
-            "y": 0.48929663608562685,
+            "y": 0.4862385321100917,
             "uniqueID": 1741196844315,
             "ioValues": [],
             "description": "Adds an input to the parent molecule. If the parent molecule is the top level of the project then the input will be available when the project is shared or imported into another project. Name is editable",
@@ -87,8 +87,8 @@
         {
             "atomType": "Code",
             "name": "Code",
-            "x": 0.5578313253012048,
-            "y": 0.6085626911314985,
+            "x": 0.5228915662650603,
+            "y": 0.40978593272171254,
             "uniqueID": 1741201495242,
             "ioValues": [
                 {
@@ -97,7 +97,7 @@
                 },
                 {
                     "name": "text",
-                    "ioValue": 10
+                    "ioValue": "\"ummmm\""
                 },
                 {
                     "name": "size",
@@ -106,10 +106,18 @@
             ],
             "description": "Defines a Replicad code block.",
             "codeVersion": 1,
-            "code": "//Inputs:[TTF, text, size]; \n\n await replicad.loadFont(\"https://fonts.gstatic.com/s/roboto/v15/W5F8_SL0XFawnjxHGsZjJA.ttf\")\n  \n      console.log(\"font loaded in code\")\n\n   \n      let shape1 = replicad.drawText(\"mom\")\n\n      let shape2 = replicad.drawText(\"mommy\", {fontSize: size, font: \"ROBOTO\"})\n\n      const newPlane = new Plane().pivot(0, 'Y');\n      console.log(shape2)\n\n     return { geometry: [shape2.sketchOnPlane(newPlane).extrude(7)], tags: [],\n        color: '#A3CE5B',\n        plane: newPlane}\n\n"
+            "code": "//Inputs:[TTF, text, size]; \n\n await replicad.loadFont(\"https://fonts.gstatic.com/s/roboto/v15/W5F8_SL0XFawnjxHGsZjJA.ttf\")\n  \n      console.log(\"font loaded in code\")\n      textString = text.toString()\n\n      let shape2 = replicad.drawText(textString, {fontSize: size, font: \"ROBOTO\"})\n\n      const newPlane = new Plane().pivot(0, 'Y');\n      console.log(shape2)\n\n     return { geometry: [shape2.sketchOnPlane(newPlane).extrude(7)], tags: [],\n        color: '#A3CE5B',\n        plane: newPlane}\n\n"
         }
     ],
-    "allConnectors": [],
+    "allConnectors": [
+        {
+            "ap1Name": "number or geometry",
+            "ap2Name": "text",
+            "ap2Primary": false,
+            "ap1ID": 1741196832630,
+            "ap2ID": 1741201495242
+        }
+    ],
     "unitsKey": "Inches",
     "fileTypeVersion": 1,
     "compiledBom": {},
