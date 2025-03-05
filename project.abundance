@@ -111,7 +111,7 @@
             ],
             "description": "Defines a Replicad code block.",
             "codeVersion": 1,
-            "code": "//Inputs:[TTF, text, size]; \n\n await replicad.loadFont(TTF)\n  \n      console.log(\"font loaded in code\")\n      let textString = text.toString()\n\n      let shape2 = replicad.drawText(textString, {fontSize: size, font: \"ROBOTO\"})\n\n      const newPlane = new Plane().pivot(0, 'Y');\n      console.log(shape2)\n\n     return { geometry: [shape2.sketchOnPlane(newPlane).extrude(1)], tags: [],\n        color: '#A3CE5B',\n        plane: newPlane}\n\n"
+            "code": "//Inputs:[TTF, text, size]; \n\n await replicad.loadFont(TTF)\n  \n      console.log(\"font loaded in code\")\n      let textString = text.toString()\n\n      let shape2 = replicad.drawText(textString, {fontSize: size, font: \"ROBOTO\"})\n\n      const newPlane = new Plane().pivot(0, 'Y');\n      console.log(shape2)\n\n     return { geometry: [shape2.sketchOnPlane(newPlane).extrude(3)], tags: [],\n        color: '#A3CE5B',\n        plane: newPlane}\n\n"
         }
     ],
     "allConnectors": [
