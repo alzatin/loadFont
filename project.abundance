@@ -7,7 +7,7 @@
     "ioValues": [
         {
             "name": "text",
-            "ioValue": "\"ummmm\""
+            "ioValue": "\"umymm\""
         },
         {
             "name": "TTF",
@@ -27,7 +27,12 @@
             "x": 0.98,
             "y": 0.5,
             "uniqueID": 1741196821425,
-            "ioValues": [],
+            "ioValues": [
+                {
+                    "name": "number or geometry",
+                    "ioValue": 1741201495242
+                }
+            ],
             "description": "Connect geometry here to make it available in the next level up. "
         },
         {
@@ -87,8 +92,8 @@
         {
             "atomType": "Code",
             "name": "Code",
-            "x": 0.5012048192771085,
-            "y": 0.5198776758409785,
+            "x": 0.5096385542168674,
+            "y": 0.5076452599388379,
             "uniqueID": 1741201495242,
             "ioValues": [
                 {
@@ -97,7 +102,7 @@
                 },
                 {
                     "name": "text",
-                    "ioValue": "\"ummmm\""
+                    "ioValue": "\"umymm\""
                 },
                 {
                     "name": "size",
@@ -106,7 +111,7 @@
             ],
             "description": "Defines a Replicad code block.",
             "codeVersion": 1,
-            "code": "//Inputs:[TTF, text, size]; \n\n await replicad.loadFont(TTF)\n  \n      console.log(\"font loaded in code\")\n      let textString = text.toString()\n\n      let shape2 = replicad.drawText(textString, {fontSize: size, font: \"ROBOTO\"})\n\n      const newPlane = new Plane().pivot(0, 'Y');\n      console.log(shape2)\n\n     return { geometry: [shape2.sketchOnPlane(newPlane).extrude(7)], tags: [],\n        color: '#A3CE5B',\n        plane: newPlane}\n\n"
+            "code": "//Inputs:[TTF, text, size]; \n\n await replicad.loadFont(TTF)\n  \n      console.log(\"font loaded in code\")\n      let textString = text.toString()\n\n      let shape2 = replicad.drawText(textString, {fontSize: size, font: \"ROBOTO\"})\n\n      const newPlane = new Plane().pivot(0, 'Y');\n      console.log(shape2)\n\n     return { geometry: [shape2.sketchOnPlane(newPlane).extrude(1)], tags: [],\n        color: '#A3CE5B',\n        plane: newPlane}\n\n"
         }
     ],
     "allConnectors": [
@@ -130,10 +135,17 @@
             "ap2Primary": false,
             "ap1ID": 1741196864005,
             "ap2ID": 1741201495242
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "number or geometry",
+            "ap2Primary": false,
+            "ap1ID": 1741201495242,
+            "ap2ID": 1741196821425
         }
     ],
     "unitsKey": "Inches",
     "fileTypeVersion": 1,
-    "compiledBom": {},
+    "compiledBom": [],
     "filetypeVersion": 1
 }
