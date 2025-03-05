@@ -31,30 +31,6 @@
             "description": "Connect geometry here to make it available in the next level up. "
         },
         {
-            "atomType": "Code",
-            "name": "Code",
-            "x": 0.4337349397590362,
-            "y": 0.4954128440366972,
-            "uniqueID": 1741196828499,
-            "ioValues": [
-                {
-                    "name": "text",
-                    "ioValue": "mommy"
-                },
-                {
-                    "name": "size",
-                    "ioValue": 10
-                },
-                {
-                    "name": "TTF",
-                    "ioValue": "http://fonts.gstatic.com/s/inder/v5/C38TwecLTfKxIHDc_Adcrw.ttf"
-                }
-            ],
-            "description": "Defines a Replicad code block.",
-            "codeVersion": 1,
-            "code": "// Inputs:[TTF, text, size];\n\n    await replicad.loadFont(\"https://fonts.gstatic.com/s/roboto/v15/W5F8_SL0XFawnjxHGsZjJA.ttf\")\n    .then(() => {\n      console.log(\"Font loaded in code\");\n  \n          const textGeometry = replicad.drawText(text)\n      \n       \n        const newPlane = new Plane().pivot(0, 'Y');\n        return {geometry: textGeometry, color: \"#FF0000\", plane: newPlane, tags: [], bom: [] }\n        })\n      \n          /**\n          To Use the Code Atom, enter your inputs to the input list a.e Inputs:[shape, height]\n          If your input is connected to another atom with a replicad geometry you can access its geometry by looking up its ID in your library. a.e library[Input1].geometry[0] \n          Use any replicad available methods to modify your geometry. Learn more about all of the available methods at \n          https://replicad.xyz/docs/introapp/UserGuide.html \n          Return a replicad object that includes geometry, color, tags and plane. \n      \n      \n          Example Code Atom:\n      \n            Inputs:[shape, x];\n      \n            let finalShape = library[shape].geometry[0].clone.translate[x,0,0]\n      \n            return {geometry: finalShape, color: library[shape].color, plane: library[shape].plane, tags: library[shape].tags }\n      \n            - See more examples at _______ \n      \n      \n          */\n      "
-        },
-        {
             "atomType": "Input",
             "name": "text",
             "x": 0.04,
@@ -68,7 +44,7 @@
             "atomType": "Input",
             "name": "TTF",
             "x": 0.04,
-            "y": 0.46788990825688076,
+            "y": 0.48929663608562685,
             "uniqueID": 1741196844315,
             "ioValues": [],
             "description": "Adds an input to the parent molecule. If the parent molecule is the top level of the project then the input will be available when the project is shared or imported into another project. Name is editable",
@@ -87,13 +63,13 @@
         {
             "atomType": "Code",
             "name": "Code",
-            "x": 0.6819277108433734,
-            "y": 0.382262996941896,
+            "x": 0.4530120481927711,
+            "y": 0.47094801223241584,
             "uniqueID": 1741198964605,
             "ioValues": [
                 {
                     "name": "TTF",
-                    "ioValue": 10
+                    "ioValue": "http://fonts.gstatic.com/s/inder/v5/C38TwecLTfKxIHDc_Adcrw.ttf"
                 },
                 {
                     "name": "text",
@@ -106,23 +82,24 @@
             ],
             "description": "Defines a Replicad code block.",
             "codeVersion": 1,
-            "code": "//Inputs:[TTF, text, size]; \nlet menu = \"mm\"\n await replicad.loadFont(\"https://fonts.gstatic.com/s/roboto/v15/W5F8_SL0XFawnjxHGsZjJA.ttf\")\n    .then(() => {\n      console.log(\"font loaded in code\")\n    })\n\nlet shape = replicad.drawCircle(size)\n\nlet shape2 = replicad.drawText(\"mommy\",{ fontSize: size, fontFamily: \"ROBOTO\"})\n\nconst newPlane = new Plane().pivot(0, 'Y');\n\n return { geometry: [shape2.sketchOnPlane(newPlane).extrude(7)], tags: [],\n      color: '#A3CE5B',\n      plane: newPlane}"
+            "code": "//Inputs:[TTF, text, size]; \n\n await replicad.loadFont(TTF)\n    .then(() => {\n    \n      console.log(\"font loaded in code\")\n\n      let shape2 = replicad.drawText(text,{ fontSize: size, font: \"ROBOTO\"})\n\n      const newPlane = new Plane().pivot(0, 'Y');\n\n     return { geometry: [shape2.sketchOnPlane(newPlane).extrude(7)], tags: [],\n        color: '#A3CE5B',\n        plane: newPlane}\n\n    })\n"
         }
     ],
     "allConnectors": [
-        {
-            "ap1Name": "number or geometry",
-            "ap2Name": "text",
-            "ap2Primary": false,
-            "ap1ID": 1741196832630,
-            "ap2ID": 1741196828499
-        },
+        null,
         {
             "ap1Name": "number or geometry",
             "ap2Name": "TTF",
             "ap2Primary": false,
             "ap1ID": 1741196844315,
-            "ap2ID": 1741196828499
+            "ap2ID": 1741198964605
+        },
+        {
+            "ap1Name": "number or geometry",
+            "ap2Name": "size",
+            "ap2Primary": false,
+            "ap1ID": 1741196864005,
+            "ap2ID": 1741198964605
         }
     ],
     "unitsKey": "Inches",
