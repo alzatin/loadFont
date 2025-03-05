@@ -87,8 +87,8 @@
         {
             "atomType": "Code",
             "name": "Code",
-            "x": 0.6987951807228915,
-            "y": 0.37614678899082565,
+            "x": 0.6819277108433734,
+            "y": 0.382262996941896,
             "uniqueID": 1741198964605,
             "ioValues": [
                 {
@@ -106,7 +106,7 @@
             ],
             "description": "Defines a Replicad code block.",
             "codeVersion": 1,
-            "code": "//Inputs:[TTF, text, size]; \n\nlet shape = replicad.drawCircle(size)\n\nlet shape2 = replicad.drawText(\"mommy\")\n\nconst newPlane = new Plane().pivot(0, 'Y');\n\n return { geometry: [shape2.sketchOnPlane(newPlane).extrude(7)], tags: [],\n      color: '#A3CE5B',\n      plane: newPlane}"
+            "code": "//Inputs:[TTF, text, size]; \n\nlet shape = replicad.drawCircle(size)\n\nlet shape2 = replicad.drawText(\"mommy\",{ fontSize: size,})\n\nconst newPlane = new Plane().pivot(0, 'Y');\n\n return { geometry: [shape2.sketchOnPlane(newPlane).extrude(7)], tags: [],\n      color: '#A3CE5B',\n      plane: newPlane}"
         }
     ],
     "allConnectors": [
