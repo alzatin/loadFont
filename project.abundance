@@ -7,7 +7,7 @@
     "ioValues": [
         {
             "name": "text",
-            "ioValue": "mommy"
+            "ioValue": "\"mommy\""
         },
         {
             "name": "TTF",
@@ -63,13 +63,13 @@
         {
             "atomType": "Code",
             "name": "Code",
-            "x": 0.4530120481927711,
-            "y": 0.47094801223241584,
+            "x": 0.4566265060240964,
+            "y": 0.44342507645259943,
             "uniqueID": 1741198964605,
             "ioValues": [
                 {
                     "name": "TTF",
-                    "ioValue": "http://fonts.gstatic.com/s/inder/v5/C38TwecLTfKxIHDc_Adcrw.ttf"
+                    "ioValue": 10
                 },
                 {
                     "name": "text",
@@ -82,26 +82,38 @@
             ],
             "description": "Defines a Replicad code block.",
             "codeVersion": 1,
-            "code": "//Inputs:[TTF, text, size]; \n\n await replicad.loadFont(TTF)\n    .then(() => {\n    \n      console.log(\"font loaded in code\")\n\n      let shape2 = replicad.drawText(text,{ fontSize: size, font: \"ROBOTO\"})\n\n      const newPlane = new Plane().pivot(0, 'Y');\n\n     return { geometry: [shape2.sketchOnPlane(newPlane).extrude(7)], tags: [],\n        color: '#A3CE5B',\n        plane: newPlane}\n\n    })\n"
-        }
-    ],
-    "allConnectors": [
-        null,
-        {
-            "ap1Name": "number or geometry",
-            "ap2Name": "TTF",
-            "ap2Primary": false,
-            "ap1ID": 1741196844315,
-            "ap2ID": 1741198964605
+            "code": "//Inputs:[TTF, text, size]; \n\nlet menu = \"mm\"\n\n await replicad.loadFont(\"https://fonts.gstatic.com/s/roboto/v15/W5F8_SL0XFawnjxHGsZjJA.ttf\")\n    .then(() => {\n    \n      console.log(\"font loaded in code\")\n\n      let shape2 = replicad.drawText(\"mom\",{fontSize: size, font: \"ROBOTO\"})\n\n      const newPlane = new Plane().pivot(0, 'Y');\n\n     return { geometry: [shape2.sketchOnPlane(newPlane).extrude(7)], tags: [],\n        color: '#A3CE5B',\n        plane: newPlane}\n\n    })\n"
         },
         {
-            "ap1Name": "number or geometry",
-            "ap2Name": "size",
-            "ap2Primary": false,
-            "ap1ID": 1741196864005,
-            "ap2ID": 1741198964605
+            "atomType": "Code",
+            "name": "Code",
+            "x": 0.6072289156626506,
+            "y": 0.5504587155963303,
+            "uniqueID": 1741201495242,
+            "ioValues": [
+                {
+                    "name": "dist",
+                    "ioValue": 10
+                },
+                {
+                    "name": "TTF",
+                    "ioValue": 10
+                },
+                {
+                    "name": "text",
+                    "ioValue": 10
+                },
+                {
+                    "name": "size",
+                    "ioValue": 10
+                }
+            ],
+            "description": "Defines a Replicad code block.",
+            "codeVersion": 1,
+            "code": "//Inputs:[TTF, text, size]; \n\n await replicad.loadFont(\"https://fonts.gstatic.com/s/roboto/v15/W5F8_SL0XFawnjxHGsZjJA.ttf\")\n    .then(() => {\n    \n      console.log(\"font loaded in code\")\n\n      let shape2 = replicad.drawText(\"mom\", {fontSize: size, font: \"ROBOTO\"})\n\n      const newPlane = new Plane().pivot(0, 'Y');\n\n     return { geometry: [shape2.sketchOnPlane(newPlane).extrude(7)], tags: [],\n        color: '#A3CE5B',\n        plane: newPlane}\n\n    })"
         }
     ],
+    "allConnectors": [],
     "unitsKey": "Inches",
     "fileTypeVersion": 1,
     "compiledBom": {},
