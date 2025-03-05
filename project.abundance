@@ -33,14 +33,10 @@
         {
             "atomType": "Code",
             "name": "Code",
-            "x": 0.4452674897119342,
-            "y": 0.5321100917431192,
+            "x": 0.44704570791527315,
+            "y": 0.5107033639143731,
             "uniqueID": 1741196828499,
             "ioValues": [
-                {
-                    "name": "ttf",
-                    "ioValue": "http://fonts.gstatic.com/s/inder/v5/C38TwecLTfKxIHDc_Adcrw.ttf"
-                },
                 {
                     "name": "text",
                     "ioValue": 10
@@ -48,11 +44,15 @@
                 {
                     "name": "size",
                     "ioValue": 10
+                },
+                {
+                    "name": "ttff",
+                    "ioValue": "http://fonts.gstatic.com/s/inder/v5/C38TwecLTfKxIHDc_Adcrw.ttf"
                 }
             ],
             "description": "Defines a Replicad code block.",
             "codeVersion": 1,
-            "code": " \n      // Inputs:[ttf, text, size];\n\n            await replicad\n            .loadFont(ttf)\n            .then(() => {\n              console.log(\"font load in code\")\n            })\n\n            let finalShape = drawRectangle(5);\n      \n            return {geometry: finalShape, color: library[shape].color, plane: library[shape].plane, tags: library[shape].tags }\n      \n      \n          /**\n          To Use the Code Atom, enter your inputs to the input list a.e Inputs:[shape, height]\n          If your input is connected to another atom with a replicad geometry you can access its geometry by looking up its ID in your library. a.e library[Input1].geometry[0] \n          Use any replicad available methods to modify your geometry. Learn more about all of the available methods at \n          https://replicad.xyz/docs/introapp/UserGuide.html \n          Return a replicad object that includes geometry, color, tags and plane. \n      \n      \n          Example Code Atom:\n      \n            Inputs:[shape, x];\n      \n            let finalShape = library[shape].geometry[0].clone.translate[x,0,0]\n      \n            return {geometry: finalShape, color: library[shape].color, plane: library[shape].plane, tags: library[shape].tags }\n      \n            - See more examples at _______ \n      \n      \n          */\n      "
+            "code": " \n      // Inputs:[ttff, text, size]\n\n     await replicad\n            .loadFont(ttff)\n            .then(() => {\n              console.log(\"font load in code\")\n            })\n\n            let finalShape = drawRectangle(5);\n      \n            return {geometry: finalShape, color: library[shape].color, plane: library[shape].plane, tags: library[shape].tags }\n      \n      \n          /**\n          To Use the Code Atom, enter your inputs to the input list a.e Inputs:[shape, height]\n          If your input is connected to another atom with a replicad geometry you can access its geometry by looking up its ID in your library. a.e library[Input1].geometry[0] \n          Use any replicad available methods to modify your geometry. Learn more about all of the available methods at \n          https://replicad.xyz/docs/introapp/UserGuide.html \n          Return a replicad object that includes geometry, color, tags and plane. \n      \n      \n          Example Code Atom:\n      \n            Inputs:[shape, x];\n      \n            let finalShape = library[shape].geometry[0].clone.translate[x,0,0]\n      \n            return {geometry: finalShape, color: library[shape].color, plane: library[shape].plane, tags: library[shape].tags }\n      \n            - See more examples at _______ \n      \n      \n          */\n      "
         },
         {
             "atomType": "Input",
@@ -68,7 +68,7 @@
             "atomType": "Input",
             "name": "TTF",
             "x": 0.04,
-            "y": 0.4587155963302752,
+            "y": 0.48012232415902134,
             "uniqueID": 1741196844315,
             "ioValues": [],
             "description": "Adds an input to the parent molecule. If the parent molecule is the top level of the project then the input will be available when the project is shared or imported into another project. Name is editable",
@@ -88,7 +88,7 @@
     "allConnectors": [
         {
             "ap1Name": "number or geometry",
-            "ap2Name": "ttf",
+            "ap2Name": "ttff",
             "ap2Primary": false,
             "ap1ID": 1741196844315,
             "ap2ID": 1741196828499
